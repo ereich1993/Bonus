@@ -48,7 +48,7 @@ namespace SynetecAssessmentApi.Services
         public async Task<bool> EmployeeExsist(int selectedEmployeeId)
         {
             var employee = await employeeBonusQueryRepository.GetEmployeeById(selectedEmployeeId);
-            return employee == null ? true : false;
+            return employee == null ? false : true;
         }
 
         public async Task<BonusPoolCalculatorResultDto> CalculateAsync(int bonusPoolAmount, int selectedEmployeeId)
